@@ -1,24 +1,17 @@
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export default function Index() {
+export default function ModalScreen() {
   const router = useRouter();
-
-  function loginUser() {
-    router.push(`/tabs/home`);
-  }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}></Text>
+      <Text style={styles.text}> Click the button below to return</Text>
       <Button
-        title={"Home"}
         color={"blue"}
-        onPress={() => {
-          loginUser;
-        }}
+        title="Exit"
+        onPress={() => router.push("/tabs/home")}
       ></Button>
-      <Link href={"/modal"}></Link>
     </View>
   );
 }
@@ -32,5 +25,11 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontFamily: "sans-serif",
+  },
+  button: {
+    width: 70,
+    height: 30,
+    backgroundColor: "blue",
+    borderRadius: 50,
   },
 });

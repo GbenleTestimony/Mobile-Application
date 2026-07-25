@@ -1,18 +1,10 @@
-import { useRouter } from "expo-router";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Modal() {
-  const router = useRouter();
-
-  function handle() {
-    router.push("/home");
-  }
-
+export default function AboutScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Hello</Text>
-      <Text style={styles.subtitle}>Here is the modal</Text>
-      <Button title="Click" color="blue" onPress={handle}></Button>
+      <Text style={styles.subtitle}>Welcome to my react-native app</Text>
     </View>
   );
 }
