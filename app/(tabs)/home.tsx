@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
-  <View style={styles.container}>
-    <Text style={styles.title}>Welcome</Text>
-    <Text style={styles.subtitle}>HomeScreen</Text>
-  </View>;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Hello</Text>
+      <Text style={styles.subtitle}>Welcome to my react-native app</Text>
+    </View>
+  );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

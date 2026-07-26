@@ -1,10 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import MyButton from "@/src/components/Button1";
+import { useRouter } from "expo-router";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
-export default function HomeScreen() {
-  <View style={styles.container}>
-    <Text style={styles.title}>Welcome</Text>
-    <Text style={styles.subtitle}>HomeScreen</Text>
-  </View>;
+const router = useRouter();
+
+function LogUserIn() {
+  router.replace("/Home");
+}
+
+export default function Login() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
+      <TextInput></TextInput>
+      <MyButton label="Login" onPress={LogUserIn} />
+    </View>
+  );
 }
 const styles = StyleSheet.create({
   container: {
@@ -12,6 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    padding: "auto",
   },
   title: {
     fontSize: 24,

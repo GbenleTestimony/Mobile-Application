@@ -16,10 +16,11 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="Home"
         options={{
+          headerTitleAlign: "center",
           title: "Home",
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "home" : "home-outline"}
@@ -30,12 +31,14 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="about"
+        name="Settings"
         options={{
-          title: "About",
+          headerTitleAlign: "center",
+          title: "Settings",
+          headerShown: true,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "person" : "person-outline"}
+              name={focused ? "settings" : "settings-outline"}
               size={24}
               color={color}
             />

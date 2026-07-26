@@ -6,12 +6,25 @@ SplashScreen.preventAutoHideAsync;
 export default function RootLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="(auth)" options={{ headerShown: false }} /> */}
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="index"
+        options={{
+          // headerShown: true,
+          // title: "Index Page",
+          headerTitleAlign: "center",
+        }}
+      />
+      <Stack.Screen
+        name="(auth)"
+        options={{ headerShown: false, headerTitleAlign: "center" }}
+      />
+      <Stack.Screen
+        name="(tabs)"
+        options={{ headerShown: false, headerTitleAlign: "center" }}
+      />
       <Stack.Screen
         name="modal"
         options={{
-          headerShown: true,
           presentation: "modal",
           title: "See",
         }}

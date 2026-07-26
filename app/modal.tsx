@@ -5,7 +5,7 @@ export default function Modal() {
   const router = useRouter();
 
   function handle() {
-    router.push("/home");
+    router.back();
   }
 
   return (
