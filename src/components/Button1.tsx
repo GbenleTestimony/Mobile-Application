@@ -19,13 +19,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 35,
     width: 70,
-    backgroundColor: "magenta",
+    backgroundColor: "black",
     padding: 3,
     borderRadius: 5,
     margin: 15,
+    opacity: 1,
   },
   text: {
     color: "white",
     textTransform: "uppercase",
+    opacity: 1,
   },
 });

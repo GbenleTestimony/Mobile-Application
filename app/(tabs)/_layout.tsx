@@ -5,8 +5,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#007AFF",
-        tabBarInactiveBackgroundColor: "8E8E93",
+        tabBarActiveTintColor: "",
+        tabBarInactiveBackgroundColor: "white",
         headerShown: true,
         tabBarStyle: {
           backgroundColor: "#ffffff",
@@ -38,7 +38,7 @@ export default function TabLayout() {
           headerShown: true,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "settings" : "settings-outline"}
+              name={focused ? "people-outline" : "people-outline"}
               size={24}
               color={color}
             />
