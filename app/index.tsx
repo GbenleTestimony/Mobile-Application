@@ -9,7 +9,7 @@ export default function Index() {
     router.push({ pathname: "/(auth)/Login" });
   }
   function LoginScreenOn() {
-    router.push({ pathname: "/(tabs)/Home" });
+    router.push({ pathname: "/(tabs)/Chats" });
   }
   return (
     <View style={styles.container}>

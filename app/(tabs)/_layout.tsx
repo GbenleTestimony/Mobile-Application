@@ -1,10 +1,14 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { TouchableOpacity } from "react-native";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        tabBarButton: (props) => (
+          <TouchableOpacity {...props} activeOpacity={1} />
+        ),
         tabBarActiveTintColor: "",
         tabBarInactiveBackgroundColor: "white",
         headerShown: true,
@@ -16,14 +20,14 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="Home"
+        name="Chats"
         options={{
           headerTitleAlign: "center",
-          title: "Home",
+          title: "Chats",
           headerShown: true,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "home" : "home-outline"}
+              name={focused ? "chatbubble" : "chatbubble-outline"}
               size={24}
               color={color}
             />
@@ -31,14 +35,40 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Settings"
+        name="Calls"
         options={{
           headerTitleAlign: "center",
-          title: "Settings",
+          title: "Calls",
+          headerShown: true,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="call" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Updates"
+        options={{
+          headerTitleAlign: "center",
+          title: "Updates",
           headerShown: true,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={focused ? "people-outline" : "people-outline"}
+              name={focused ? "chatbubbles" : "chatbubbles-outline"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Tools"
+        options={{
+          headerTitleAlign: "center",
+          title: "Tools",
+          headerShown: true,
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "bar-chart" : "bar-chart-outline"}
               size={24}
               color={color}
             />

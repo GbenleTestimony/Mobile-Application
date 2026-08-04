@@ -1,17 +1,18 @@
+import { useRouter } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function SettingsScreen() {
+export default function Tools() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome</Text>
-      <Text style={styles.subtitle}>Settings</Text>
+      <Text style={styles.title}> Tools are in here</Text>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#e5e5e5",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -19,9 +20,5 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 8,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#666",
   },
 });

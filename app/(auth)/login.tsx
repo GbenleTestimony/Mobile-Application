@@ -13,7 +13,7 @@ export default function Login() {
   const router = useRouter();
 
   function LogUserIn() {
-    router.replace("/Home");
+    router.replace("/Chats");
   }
   const [isSecure, setIsSecure] = useState(true);
 
