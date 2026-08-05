@@ -5,12 +5,14 @@
     "version": "1.0.0",
     "orientation": "portrait",
     // "icon": "./assets/myImages/backgroundImg1.jpg",
+    
     "scheme": "mobile2",
     "userInterfaceStyle": "automatic",
     "ios": {
       "icon": "./assets/expo.icon"
     },
     "android": {
+      
       "adaptiveIcon": {
         // "backgroundColor": "#000000",
         // "foregroundImage": "./assets/images/android-icon-foreground.png",

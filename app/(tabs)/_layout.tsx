@@ -1,17 +1,28 @@
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import { Text } from "expo-router/build/react-navigation";
+import { GestureResponderEvent, TouchableOpacity } from "react-native";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarButton: (props) => (
-          <TouchableOpacity {...props} activeOpacity={1} />
-        ),
         tabBarActiveTintColor: "",
+        tabBarInactiveTintColor: "black",
         tabBarInactiveBackgroundColor: "white",
         headerShown: true,
+        tabBarLabelStyle: {
+          fontSize: 15,
+        },
+        tabBarButton: ({ onPress, style, children }) => (
+          <TouchableOpacity
+            onPress={onPress as (event: GestureResponderEvent) => void}
+            style={style}
+            activeOpacity={1}
+          >
+            {children}
+          </TouchableOpacity>
+        ),
         tabBarStyle: {
           backgroundColor: "#ffffff",
           borderTopWidth: 1,
@@ -22,9 +33,24 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Chats"
         options={{
-          headerTitleAlign: "center",
-          title: "Chats",
+          headerTitleAlign: "left",
+          headerTitleStyle: {
+            fontWeight: "bold",
+            fontSize: 25,
+          },
+          title: "Kasper",
           headerShown: true,
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                color: color,
+                fontSize: focused ? 14 : 11,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Chats
+            </Text>
+          ),
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "chatbubble" : "chatbubble-outline"}
@@ -40,8 +66,23 @@ export default function TabLayout() {
           headerTitleAlign: "center",
           title: "Calls",
           headerShown: true,
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="call" size={size} color={color} />
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                color: color,
+                fontSize: focused ? 14 : 11,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Calls
+            </Text>
+          ),
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "call" : "call-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -51,6 +92,17 @@ export default function TabLayout() {
           headerTitleAlign: "center",
           title: "Updates",
           headerShown: true,
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                color: color,
+                fontSize: focused ? 14 : 11,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Updates
+            </Text>
+          ),
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "chatbubbles" : "chatbubbles-outline"}
@@ -66,6 +118,17 @@ export default function TabLayout() {
           headerTitleAlign: "center",
           title: "Tools",
           headerShown: true,
+          tabBarLabel: ({ focused, color }) => (
+            <Text
+              style={{
+                color: color,
+                fontSize: focused ? 14 : 11,
+                fontWeight: focused ? "bold" : "normal",
+              }}
+            >
+              Tools
+            </Text>
+          ),
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
               name={focused ? "bar-chart" : "bar-chart-outline"}

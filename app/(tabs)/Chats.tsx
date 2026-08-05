@@ -1,12 +1,29 @@
+import { demoUsers } from "@/src/files/users";
 import { useRouter } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Chats() {
   const router = useRouter();
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> Chats are here</Text>
-    </View>
+    <ScrollView
+      style={styles.list}
+      contentContainerStyle={{
+        flexGrow: 1,
+        alignItems: "center",
+        justifyContent: "flex-start",
+      }}
+    >
+      {demoUsers.map((user) => (
+        <Pressable
+          key={user.id}
+          style={({ pressed }) => [styles.pressable, pressed && styles.active]}
+        >
+          <Text style={styles.item} key={user.id}>
+            {user.name}
+          </Text>
+        </Pressable>
+      ))}
+    </ScrollView>
   );
 }
 
@@ -20,5 +37,29 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 8,
+  },
+  item: {
+    color: "white",
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    textAlignVertical: "center",
+    // backgroundColor: "blue",
+    width: "100%",
+    height: 60,
+    padding: 10,
+  },
+  list: {
+    padding: 20,
+    flex: 1,
+  },
+  pressable: {
+    backgroundColor: "black",
+    width: "100%",
+    borderRadius: 8,
+    margin: 5,
+  },
+  active: {
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
 });
