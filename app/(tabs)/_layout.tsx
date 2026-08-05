@@ -63,7 +63,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Calls"
         options={{
-          headerTitleAlign: "center",
+          headerTitleAlign: "left",
           title: "Calls",
           headerShown: true,
           tabBarLabel: ({ focused, color }) => (
@@ -89,7 +89,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Updates"
         options={{
-          headerTitleAlign: "center",
+          headerTitleAlign: "left",
           title: "Updates",
           headerShown: true,
           tabBarLabel: ({ focused, color }) => (
@@ -115,7 +115,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="Tools"
         options={{
-          headerTitleAlign: "center",
+          headerTitleAlign: "left",
           title: "Tools",
           headerShown: true,
           tabBarLabel: ({ focused, color }) => (

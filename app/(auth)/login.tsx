@@ -2,11 +2,11 @@ import MyButton from "@/src/components/Button1";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
-    ImageBackground,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
 
 export default function Login() {
